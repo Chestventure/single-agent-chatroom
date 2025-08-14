@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15일 반장 · Night Time 채팅 데모</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>15일 반장</h1>
+      <div class="panel">
+        <h2>Night Time</h2>
+        <p class="dim">3분 타임어택 채팅</p>
+        <div class="timer">
+          <div id="timerBar" class="timer-bar"></div>
+          <div id="timerLabel" class="timer-label">--:--</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>인물 소개</h3>
+        <ul id="personaList" class="personas"></ul>
+      </div>
+
+      <div class="panel">
+        <h3>컨트롤</h3>
+        <label class="label">플레이어 이름</label>
+        <input id="playerName" class="input" placeholder="이름 (기본: 나)" />
+        <label class="label">낮에 있었던 일 (Context)</label>
+        <textarea id="dayContext" class="textarea" rows="5" placeholder="예) 사다리 수리 성공, 텃밭 물주기, 담임 칭찬 받음"></textarea>
+        <div class="row">
+          <button id="startBtn" class="btn primary">시작 (3분)</button>
+          <button id="stopBtn" class="btn">중지</button>
+        </div>
+        <div class="row">
+          <button id="clearBtn" class="btn danger ghost">대화 초기화</button>
+        </div>
+        <p class="hint">* 시작을 누르면 1~3초 간격으로 NPC 채팅이 생성됩니다.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div id="chat" class="chat"></div>
+      <form id="composer" class="composer">
+        <input id="input" class="input flex" placeholder="메시지를 입력하세요…" autocomplete="off" />
+        <button type="submit" class="btn primary">전송</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
